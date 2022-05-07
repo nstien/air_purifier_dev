@@ -1,7 +1,7 @@
 
 class DataController {
     index(req, res, next) {
-        res.send('hello')
+        res.send('h')
     }
 }
 

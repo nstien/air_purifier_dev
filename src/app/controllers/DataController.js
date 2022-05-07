@@ -1,7 +1,7 @@
 
 class DataController {
     index(req, res, next) {
-        res.send('h')
+        res.send('bat')
     }
 }
 

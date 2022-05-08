@@ -74,15 +74,15 @@
         const socket = io();
         const power = document.querySelector('.power');
         let isStatus = false;
-        let status = 'off'
+        let status = 'tat'
 
         power.addEventListener('click', (e) => {
             isStatus = !isStatus
             if(isStatus) {
-                status = 'on'
+                status = 'bat'
                 socket.emit('status', status);
             }else {
-                status = 'off'
+                status = 'tat'
                 socket.emit('status', status);
             }
         })

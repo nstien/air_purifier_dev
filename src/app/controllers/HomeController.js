@@ -1,7 +1,7 @@
-
+const path = require('path')
 class HomeController {
     index(req, res, next) {
-        res.render('home')
+        res.sendFile(path.join(__dirname, '../../views/home.html'))
     }
 }
 

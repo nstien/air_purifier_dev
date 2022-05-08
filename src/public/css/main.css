@@ -99,3 +99,7 @@ span.concentration-of-co2 {
 .auto span {
     margin: 0 12px;
 }
+
+.power.active span{
+    color: #FBD56B;
+}

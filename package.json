@@ -23,10 +23,9 @@
   },
   "homepage": "https://github.com/nstien/air_purifier_dev#readme",
   "dependencies": {
-    "config": "^3.3.7",
     "express": "^4.18.1",
-    "express-handlebars": "^6.0.5",
-    "mongoose": "^6.3.2"
+    "mongoose": "^6.3.2",
+    "socket.io": "^4.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"

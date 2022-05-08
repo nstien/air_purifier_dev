@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
 });
 
 app.get('/data', (req, res) => {
-    res.send(a)
+    res.send('\n' + a)
 })
 
 // route

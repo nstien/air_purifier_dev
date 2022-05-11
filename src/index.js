@@ -8,6 +8,9 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+const { engine } = require('express-handlebars')
+const data = require('./app/models/model')
+const { isBuffer } = require('util')
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -20,6 +23,11 @@ connectDB()
 //static files
 app.use(express.static(path.join(__dirname, 'public')))
 
+// handlebars
+app.engine('.hbs', engine({ extname: '.hbs' }));
+app.set('view engine', '.hbs');
+app.set('views', path.join(__dirname, 'views'));
+
 let a
 io.on('connection', (socket) => {
     console.log('a user connected');
@@ -30,7 +38,15 @@ io.on('connection', (socket) => {
 });
 
 app.get('/data', (req, res) => {
-    res.send('\n' + a)
+    if(req.params) {
+        data.updateOne({}, req.query)
+            .then(() => {
+                res.send(a)
+            })
+            .catch(err => {})
+    }else {
+        res.send(a)
+    }
 })
 
 // route
@@ -39,3 +55,5 @@ routes(app)
 server.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+module.exports = ((a) => a)()

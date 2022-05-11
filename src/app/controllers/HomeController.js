@@ -1,7 +1,13 @@
-const path = require('path')
+const data = require('../models/model')
+
 class HomeController {
     index(req, res, next) {
-        res.sendFile(path.join(__dirname, '../../views/home.html'))
+        data.find({})
+            .then(value => {
+                res.render('home', ...value)
+            })
+            .catch(err => {})
+        
     }
 }
 

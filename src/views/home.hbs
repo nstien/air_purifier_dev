@@ -65,10 +65,10 @@
 
     power.addEventListener('click', (e) => {
         if (power.getAttribute('data-check') === 'off') {
-            status = 'bat'
+            status = 'b'
             socket.emit('status', status);
         } else {
-            status = 'tat'
+            status = 't'
             socket.emit('status', status);
         }
     })

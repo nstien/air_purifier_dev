@@ -66,10 +66,10 @@
     power.addEventListener('click', (e) => {
         isCheck = !isCheck
         if (isCheck) {
-            status = 'bat'
+            status = 'b'
             socket.emit('status', status);
         } else {
-            status = 'tat'
+            status = 't'
             socket.emit('status', status);
         }
     })

@@ -1,3 +1,4 @@
+
 <div id="app">
     <div class="container">
 
@@ -73,5 +74,9 @@
             socket.emit('status', status);
         }
     })
-    
+    setInterval(function () {
+        location.reload()
+    }, 3000)
 </script>
+
+

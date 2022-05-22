@@ -4,7 +4,7 @@ class ListController {
     index(req, res, next) {
         data.find({})
             .then(value => {
-                res.json(value)
+                res.status(200).json(value)
             })
             .catch(err => {})
         

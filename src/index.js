@@ -15,6 +15,10 @@ connectDB()
 // route
 routes(app)
 
+app.get('/', (req, res) => {
+    res.send("Wellcome to page")
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
